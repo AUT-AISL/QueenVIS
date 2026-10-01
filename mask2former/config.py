@@ -107,6 +107,16 @@ def add_maskformer2_config(cfg):
     cfg.MODEL.SEM_SEG_HEAD.DEFORMABLE_TRANSFORMER_ENCODER_N_POINTS = 4
     cfg.MODEL.SEM_SEG_HEAD.DEFORMABLE_TRANSFORMER_ENCODER_N_HEADS = 8
 
+    # vit adapter backbone
+    cfg.MODEL.VIT_ADAPTER = CN()
+    cfg.MODEL.VIT_ADAPTER.NAME = "vitl"
+    cfg.MODEL.VIT_ADAPTER.VIT_WEIGHT = ""
+    cfg.MODEL.VIT_ADAPTER.FREEZE_VIT = True
+    cfg.MODEL.VIT_ADAPTER.FINETUNE = False
+    cfg.MODEL.VIT_ADAPTER.FINETUNE_INDEXES = [0]
+    cfg.MODEL.VIT_ADAPTER.WITH_CP = False
+
+
     # point loss configs
     # Number of points sampled during training for a mask point head.
     cfg.MODEL.MASK_FORMER.TRAIN_NUM_POINTS = 112 * 112

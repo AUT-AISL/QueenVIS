@@ -1,0 +1,21 @@
+_BASE_: video_maskformer2_R50_bs32_8ep_frame.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2VitAdapterDinoV2"
+  VIT_ADAPTER:
+    NAME: "vitl"
+    VIT_WEIGHT: ""  # Set path to pretrained dinov2_vitl14_pretrain.pth
+    FREEZE_VIT: True
+    FINETUNE: False
+    FINETUNE_INDEXES: [0]
+    WITH_CP: False
+  WEIGHTS: ""
+  PIXEL_MEAN: [123.675, 116.280, 103.530]
+  PIXEL_STD: [58.395, 57.120, 57.375]
+  MASK_FORMER:
+    NUM_OBJECT_QUERIES: 200
+# OOM when using a larger test size
+# INPUT:
+#   MIN_SIZE_TEST: 480
+SOLVER:
+  IMS_PER_BATCH: 16
