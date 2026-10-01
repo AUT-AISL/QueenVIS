@@ -29,6 +29,14 @@ There are no official QueenVIS model-zoo entries for reduced data percentages.
 | YouTube-VIS 2021 | 100% frames, image-only | 59.8 | [config](configs/youtubevis_2021/swin/video_maskformer2_swin_large_IN21k_384_bs32_8ep_frame.yaml) | [queenvis_ytvis21_swin.pth](https://huggingface.co/ArianKheir/QueenVIS/blob/main/queenvis_ytvis21_swin.pth) |
 | OVIS | 100% frames, image-only | 41.0 | [config](configs/ovis/swin/video_maskformer2_swin_large_IN21k_384_bs32_8ep_frame.yaml) | [queenvis_ovis_swin.pth](https://huggingface.co/ArianKheir/QueenVIS/blob/main/queenvis_ovis_swin.pth) |
 
+## ViT-L
+
+| Dataset | Training | Reported AP | Configuration | Checkpoint |
+|---|---|---:|---|---|
+| YouTube-VIS 2019 | 100% frames, image-only | — | [config](configs/youtubevis_2019/video_maskformer2_vitl_adapter_dinov2_bs32_8ep_frame.yaml) | [queenvis_ytvis19_VIT.pth](https://huggingface.co/ArianKheir/QueenVIS/blob/main/queenvis_ytvis19_VIT.pth) |
+| YouTube-VIS 2021 | 100% frames, image-only | — | [config](configs/youtubevis_2021/video_maskformer2_vitl_adapter_dinov2_bs32_8ep_frame.yaml) | [queenvis_ytvis21_VIT.pth](https://huggingface.co/ArianKheir/QueenVIS/blob/main/queenvis_ytvis21_VIT.pth) |
+| OVIS | 100% frames, image-only | — | [config](configs/ovis/video_maskformer2_vitl_adapter_dinov2_bs32_8ep_frame.yaml) | [queenvis_ovis_VIT.pth](https://huggingface.co/ArianKheir/QueenVIS/blob/main/queenvis_ovis_VIT.pth) |
+
 ## Using a released checkpoint
 
 You can pass the Hugging Face direct download link directly into Detectron2's evaluation script:
